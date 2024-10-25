@@ -1,1 +1,2 @@
+<!--selects the DOM element for a comment and replaced it with the form partial for that comment-->
 $("#<%= dom_id(@comment) %>").replaceWith("<%= j(render "comments/form", comment: @comment) %>");
