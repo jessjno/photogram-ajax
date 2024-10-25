@@ -5,14 +5,14 @@
   <% if follow_request %>
     <% if follow_request.pending? %>
       <%= link_to follow_request,
-        class: "btn btn-outline-secondary" "#{dom_id(follow_request)}", 
+        class: "btn btn-outline-secondary #{dom_id(follow_request)}", 
         method: :delete, 
         remote: true do %>
         Un-request
       <% end %>
     <% elsif follow_request.accepted? %>
       <%= link_to follow_request,  
-        class: "btn btn-outline-secondary" "#{dom_id(follow_request)}", 
+        class: "btn btn-outline-secondary #{dom_id(follow_request)}", 
         method: :delete, 
         remote: true do %>
         Un-follow

@@ -1,8 +1,5 @@
-<!-- select the current followers element using the DOM ID for the user -->
-var current_followers = $("#<%= dom_id(@follow_request) %>");
+var current_followers = $(".<%= dom_id(@follow_request.recipient) %>");
 
-<!--render the updated followers partial-->
-var updated_followers = $("<%= j(render 'follow_requests/form', sender: @follow_request.sender, recipient: @follow_request.recipient) %>");
+var updated_followers = $("<%= j(render 'follow_requests/follow_unfollow', sender: @follow_request.sender, recipient: @follow_request.recipient) %>");
 
-<!--replace the current followers with the updated followers-->
 current_followers.replaceWith(updated_followers); 
