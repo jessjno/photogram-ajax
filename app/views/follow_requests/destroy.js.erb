@@ -1,0 +1,5 @@
+var current_followers = $(".<%= dom_id(@follow_request) %>");
+
+var updated_followers = $("<%= j(render 'follow_requests/form', follow_request: @follow_request.recipient.received_follow_requests.build) %>");
+
+current_followers.replaceWith(updated_followers); 

@@ -1,9 +1,14 @@
+<!--render the new comment partial as a JS-safe string-->
 var added_comment = $("<%= escape_javascript(render 'comments/comment', comment: @comment) %>");
 
+<!--initially hide the comment so we can animate its appearance later-->
 added_comment.hide();
 
+<!--Use a sliding anumation to reveal the newly added comment-->
 $("#<%= dom_id(@comment.photo) %>_new_comment_form").before(added_comment);
 
+<!--using a sliding animatioon to reveal the newly added comment-->
 added_comment.slideDown();
 
+<!--clear the comment input field within the form after submition-->
 $("#<%= dom_id(@comment.photo) %>_new_comment_form #comment_body").val("")
